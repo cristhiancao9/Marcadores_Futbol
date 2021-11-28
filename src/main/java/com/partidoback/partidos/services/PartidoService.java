@@ -1,5 +1,7 @@
 package com.partidoback.partidos.services;
 
+import java.util.List;
+
 import com.partidoback.partidos.models.PartidoModel;
 import com.partidoback.partidos.repositories.PartidoRepositorie;
 
@@ -12,5 +14,8 @@ public class PartidoService {
 
     public void guardaPartido(PartidoModel partido){
         this.partidoRepositorie.save(partido);
+    }
+    public List<PartidoModel> traerTodos(){
+        return this.partidoRepositorie.findAll();
     }
 }

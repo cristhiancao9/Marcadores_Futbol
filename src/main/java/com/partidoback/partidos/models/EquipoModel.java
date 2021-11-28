@@ -1,5 +1,7 @@
 package com.partidoback.partidos.models;
 
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class EquipoModel {
   @Id  
   private String id;
+  @NotEmpty(message="El nombre del equipo no puede estar vacio")
   private String nombres;
   
   public String getId(){
